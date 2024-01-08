@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\TestAnswers\\Projects Based\\Ans3\\Ans3.csproj": {}
+    "F:\\TestAnswers\\Projects Based\\Github\\Ans3\\Ans3.csproj": {}
   },
   "projects": {
-    "F:\\TestAnswers\\Projects Based\\Ans3\\Ans3.csproj": {
+    "F:\\TestAnswers\\Projects Based\\Github\\Ans3\\Ans3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\TestAnswers\\Projects Based\\Ans3\\Ans3.csproj",
+        "projectUniqueName": "F:\\TestAnswers\\Projects Based\\Github\\Ans3\\Ans3.csproj",
         "projectName": "Ans3",
-        "projectPath": "F:\\TestAnswers\\Projects Based\\Ans3\\Ans3.csproj",
+        "projectPath": "F:\\TestAnswers\\Projects Based\\Github\\Ans3\\Ans3.csproj",
         "packagesPath": "C:\\Users\\myath\\.nuget\\packages\\",
-        "outputPath": "F:\\TestAnswers\\Projects Based\\Ans3\\obj\\",
+        "outputPath": "F:\\TestAnswers\\Projects Based\\Github\\Ans3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\myath\\AppData\\Roaming\\NuGet\\NuGet.Config",
