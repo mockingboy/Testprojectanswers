@@ -1,0 +1,6 @@
+@Ans3_HostAddress = http://localhost:5255
+
+GET {{Ans3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

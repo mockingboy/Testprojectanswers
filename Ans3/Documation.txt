@@ -1,0 +1,76 @@
+﻿PayloadsController Documentation
+Overview
+The PayloadsController is a part of a web API designed to handle payloads sent by devices. It provides endpoints for retrieving payloads, fetching a specific payload by ID, and receiving new payloads.
+
+Constructor
+
+public PayloadsController(ILogger<PayloadsController> logger, DBContext dbContext)
+logger: An instance of the logger to facilitate logging activities.
+dbContext: The database context (DBContext) for interacting with the underlying database.
+
+
+Endpoints
+1. GetAllPayloads
+
+[HttpGet(Name = "GetAllPayloads")]
+public async Task<ActionResult<IEnumerable<PayloadDataModel>>> GetAllPayloads()
+
+Description: Retrieves all payloads from the database.
+HTTP Method: GET
+Returns: List of PayloadDataModel objects.
+Logging: Logs information about the process.
+
+2. GetPayloadById
+
+[HttpGet("{id}", Name = "GetPayloadById")]
+public async Task<ActionResult<PayloadDataModel>> GetPayloadById(int id)
+
+Description: Retrieves a specific payload by its ID.
+HTTP Method: GET
+Parameters: id - The ID of the payload to retrieve.
+Returns: PayloadDataModel object if found, otherwise NotFound.
+Logging: Logs information about the process.
+
+3. ReceivePayload
+
+[HttpPost]
+public IActionResult ReceivePayload([FromBody] PayloadDataModel payloadData)
+
+Description: Receives and stores a new payload in the database.
+HTTP Method: POST
+Request Body: JSON representation of PayloadDataModel.
+Returns: OK if successful, BadRequest if validation fails, and InternalServerError for other errors.
+Logging: Logs information about the payload processing.
+Payload Validation
+The controller performs validation on received payloads through the ReceivePayload endpoint. The validation includes checks for required fields, null values, and specific ranges for temperature and humidity.
+
+Logging
+The controller extensively uses logging to record various events and errors during payload processing. It logs information, warnings, and errors to provide insights into the system's behavior.
+
+ValidationException
+The custom ValidationException is thrown when payload validation fails. It contains details about the validation error.
+
+Data Grouping
+Payloads are categorized into two groups based on their data structure: Group One and Group Two. Each group has its own set of validation rules.
+
+
+Sample dummy data for the ReceivePayload endpoint is included in the code comments.
+
+## Database
+The database is implemented using Entity Framework Core
+
+The database context (DBContext) is used to interact with the database. It is injected into the controller through the constructor.
+
+The database is created using the code-first approach. The database schema is generated from the model classes.
+//dotnet tool install --global dotnet-ef
+//dotnet ef migrations add InitialCreate
+//dotnet ef database update
+above commands to create database and migrate
+
+## Models
+The models are used to represent the data in the system. They are used by the controller to receive and return data.
+
+
+
+
+
